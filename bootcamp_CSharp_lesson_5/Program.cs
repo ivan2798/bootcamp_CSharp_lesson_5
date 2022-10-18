@@ -11,30 +11,14 @@ namespace bootcamp_CSharp_lesson_5
 
         static void Main(string[] args)
         {
-            Random numero = new Random();
+            int z = 10;
 
-            int aleatorio = numero.Next(0, 100);
+            do{
+                Console.WriteLine("Impresión" + z);
 
-            int miNumero = 101;
+                z++;    
 
-            int intentos = 0;
-
-            Console.WriteLine("Introduce un n° entre 0 y 100");
-
-            while (aleatorio != miNumero)
-            {
-                intentos++;
-
-                miNumero = int.Parse(Console.ReadLine());
-
-                if (miNumero > aleatorio) Console.WriteLine("El n° es más bajo");
-
-                if (miNumero < aleatorio) Console.WriteLine("El n° es más alto");
-
-
-            }
-
-            Console.WriteLine($"Correcto! Has necesitado {intentos} intentos");
+            }while (z < 15) ;
 
         }
 
