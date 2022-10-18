@@ -11,28 +11,30 @@ namespace bootcamp_CSharp_lesson_5
 
         static void Main(string[] args)
         {
-            Console.WriteLine("¡Deseas entrar en el bucle while?");
+            Random numero = new Random();
 
-            string respuesta = Console.ReadLine();
+            int aleatorio = numero.Next(0, 100);
 
-            while (respuesta != "no")
+            int miNumero = 101;
+
+            int intentos = 0;
+
+            Console.WriteLine("Introduce un n° entre 0 y 100");
+
+            while (aleatorio != miNumero)
             {
-                Console.WriteLine("estás ejecutando el interior del bucle while");
+                intentos++;
 
-                Console.WriteLine("Introduce tu nombre, por favor");
+                miNumero = int.Parse(Console.ReadLine());
 
-                string nombre = Console.ReadLine();
+                if (miNumero > aleatorio) Console.WriteLine("El n° es más bajo");
 
-                Console.WriteLine($"Saldrás del bucle {nombre} cuando respondas 'no' a la pregunta");
+                if (miNumero < aleatorio) Console.WriteLine("El n° es más alto");
 
-                Console.WriteLine("¿Deseas repetir otra vez?");
-
-                respuesta = Console.ReadLine(); 
 
             }
 
-            Console.WriteLine("Has salido del bucle");
-            
+            Console.WriteLine($"Correcto! Has necesitado {intentos} intentos");
 
         }
 
